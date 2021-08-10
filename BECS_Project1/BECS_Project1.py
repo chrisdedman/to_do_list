@@ -72,27 +72,6 @@ def to_do_list():
         for line in toDoList:
             toDoList_update.write(line)
         toDoList_update.close()
-
-        # request = input('Which task would you like to delete? [index #]\n\t>').capitalize()
-        # # open the text file with the to-do list
-        # try:
-        #     with open("to_do_list.txt", 'r') as read_file:
-        #         # read each lines from the text file
-        #         #toDoList = read_file.readlines()
-        #         test = []
-        #         for lines in read_file:
-        #             for word in request:
-        #                 if word in lines:
-        #                     lines = lines.replace(word, '')
-        #             test.append(lines)
-        #         read_file.close()
-        #         with open("to_do_list.txt", 'w') as read_file:
-        #             for line in test:
-        #                 read_file.write(line)
-        #         read_file.close()
-        # # Create an exception if the user enter a index out of range
-        # except IndexError:
-        #     print("Sorry, this element do not exist!")
     
 # If the user enter C, he will have the choice to clear the to-do list 
     elif option == 'C':
