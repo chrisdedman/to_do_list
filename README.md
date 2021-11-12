@@ -2,7 +2,7 @@
 This is a project that I had during my first semester of Computer Science. 
 It is a user-friendly command line interface for a To-Do List.
 
-##### When you start the application from the command line, you will have options to
+##### When you start the application from the command line, you will have options to:
 * Add to the list
 * Show the list
 * Remove something from the list
