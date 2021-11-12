@@ -9,7 +9,7 @@ It is a user-friendly command line interface for a To-Do List.
 * Clear the list
 * Quit the application.
 
-I am using the module readline to store items that will then persist in memory, even after the application is quit. 
+I am using the module readline to read stored items that will then persist in memory, even after the application is quit. 
 
 ## Technology
 This project is create with:
