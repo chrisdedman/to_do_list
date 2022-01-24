@@ -1,6 +1,8 @@
 # Import the packtage for refreshing the screen if needed
 import os
 import readline
+
+
 # Create a file when launching the app for the first time
 # if the file alread exist, append the new data to the end
 # of the file.
@@ -11,13 +13,14 @@ def start():
         output.close()
         to_do_list()
 
+
 # Create function to Quit, Add, Delete, Show or Clear the to-do list,
 # and the option to refresh the screen
 def to_do_list():
     
     option = input("\n\t[R]efresh Screen / [S]how / [A]dd / [D]elete / [C]lear / [Q]uit\n>").upper()
     
-# Clean the screen if the user enter R
+    # Clean the screen if the user enter R
     if option == "R":
         os.system("cls||clear")
         print("""
@@ -25,6 +28,7 @@ def to_do_list():
 \t\t** Welcome to your To-Do List application! **
 \t\t*********************************************
 """)
+
 
 # If the user enter S, the to-do list items will be print to the screen
     elif option == 'S':
@@ -38,6 +42,7 @@ def to_do_list():
                 for index, value in enumerate(toDoList, start=1):
                     print(f"\t {index}. {value}")
 
+
 # If the user enter A, he will have the choice to add some items to the list,
 # and keep it save on the computer
     elif option == "A":
@@ -49,6 +54,7 @@ def to_do_list():
             with open("to_do_list.txt", 'a') as toDo:
                 toDo.write(f"{add_to_list[::]}\n")
             
+
 # If the user enter D, he will have the choice to remove an item
     elif option == 'D':
         
@@ -62,28 +68,40 @@ def to_do_list():
                 read_file.close()
                 # deleted the lines request by the user from the text file
                 del toDoList[request-1]
+
         # Create an exception if the user enter a index out of range
         except IndexError:
             print("Sorry, this element do not exist!")
             
         # re-open the text file with the to-do list 
         toDoList_update = open("to_do_list.txt", "w+")
+
         # update the text file with the new to-do list without the line deleted
         for line in toDoList:
             toDoList_update.write(line)
         toDoList_update.close()
     
+
 # If the user enter C, he will have the choice to clear the to-do list 
     elif option == 'C':
+
+        # --- Add the choice to cancel this action --- #
+        test = input("Are you sure you want to clear your to-do list? [Y]es/[N]o").lower()
+        if 'n' in test:
+            pass
+
+        else:
+            erase_content = open('to_do_list.txt', 'w')
+            erase_content.truncate(0)
         
-        erase_content = open('to_do_list.txt', 'w')
-        erase_content.truncate(0)
-        
+
 # If the user enter Q, the program will be close
     elif option == 'Q':
         
         print("Thanks for using our program.\nGoodbye!")
         exit(0)
+
+
 # If the user doesn't choose a option available, 
 # the app will tell what is the option unavailable
     else:
