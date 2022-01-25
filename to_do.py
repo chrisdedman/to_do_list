@@ -58,7 +58,7 @@ def to_do_list():
 # If the user enter D, he will have the choice to remove an item
     elif option == 'D':
         
-        request = int(input('Which task would you like to delete? [index #]\n\t>'))
+        delete_request = int(input('Which task would you like to delete? [index #]\n\t>'))
         # open the text file with the to-do list
         try:
             with open("to_do_list.txt", 'r') as read_file:
@@ -67,7 +67,7 @@ def to_do_list():
                 # close the text file
                 read_file.close()
                 # deleted the lines request by the user from the text file
-                del toDoList[request-1]
+                del toDoList[delete_request-1]
 
         # Create an exception if the user enter a index out of range
         except IndexError:
@@ -86,8 +86,8 @@ def to_do_list():
     elif option == 'C':
 
         # --- Add the choice to cancel this action --- #
-        test = input("Are you sure you want to clear your to-do list? [Y]es/[N]o").lower()
-        if 'n' in test:
+        cancel_clear_action = input("Are you sure you want to clear your to-do list? [Y]es/[N]o").lower()
+        if 'n' in cancel_clear_action:
             pass
 
         else:
