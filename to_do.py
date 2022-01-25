@@ -18,10 +18,10 @@ def start():
 # and the option to refresh the screen
 def to_do_list():
     
-    option = input("\n\t[R]efresh Screen / [S]how / [A]dd / [D]elete / [C]lear / [Q]uit\n>").upper()
+    user_option = input("\n\t[R]efresh Screen / [S]how / [A]dd / [D]elete / [C]lear / [Q]uit\n>").upper()
     
     # Clean the screen if the user enter R
-    if option == "R":
+    if user_option == "R":
         os.system("cls||clear")
         print("""
 \t\t*********************************************
@@ -31,7 +31,7 @@ def to_do_list():
 
 
 # If the user enter S, the to-do list items will be print to the screen
-    elif option == 'S':
+    elif user_option == 'S':
         print("\nThis is your To-Do List:\n")
 
         with open("to_do_list.txt", 'r') as read_file:
@@ -45,7 +45,7 @@ def to_do_list():
 
 # If the user enter A, he will have the choice to add some items to the list,
 # and keep it save on the computer
-    elif option == "A":
+    elif user_option == "A":
         
         add_to_list = input("Which task would you like to add?\n\t>").capitalize()
         if len(add_to_list) == 0:
@@ -56,7 +56,7 @@ def to_do_list():
             
 
 # If the user enter D, he will have the choice to remove an item
-    elif option == 'D':
+    elif user_option == 'D':
         
         delete_request = int(input('Which task would you like to delete? [index #]\n\t>'))
         # open the text file with the to-do list
@@ -83,7 +83,7 @@ def to_do_list():
     
 
 # If the user enter C, he will have the choice to clear the to-do list 
-    elif option == 'C':
+    elif user_option == 'C':
 
         # --- Add the choice to cancel this action --- #
         cancel_clear_action = input("Are you sure you want to clear your to-do list? [Y]es/[N]o").lower()
@@ -96,16 +96,17 @@ def to_do_list():
         
 
 # If the user enter Q, the program will be close
-    elif option == 'Q':
+    elif user_option == 'Q':
         
         print("Thanks for using our program.\nGoodbye!")
         exit(0)
 
 
-# If the user doesn't choose a option available, 
-# the app will tell what is the option unavailable
+# If the user doesn't choose a user_option available, 
+# the app will tell what is the user_option unavailable
     else:
-        print(f"Sorry, '{option}' is not an option available.")
+        print(f"Sorry, '{user_option}' is not an user_option available.")
+    
     
 # Start the program with a welcome message, and start a while loop                               
 if __name__ == "__main__":
