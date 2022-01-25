@@ -1,6 +1,5 @@
 # Import the packtage for refreshing the screen if needed
 import os
-import readline
 
 
 # Create a file when launching the app for the first time
